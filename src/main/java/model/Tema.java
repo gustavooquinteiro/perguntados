@@ -11,7 +11,7 @@ public class Tema implements Serializable{
 	private String tema;
 	private List<Pergunta> perguntas;
 
-	Tema(String tema){
+	public Tema(String tema){
 		setTema(tema);
 	}
 		

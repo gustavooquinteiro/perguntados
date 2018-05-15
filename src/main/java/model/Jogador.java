@@ -10,7 +10,7 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 	private int recorde;
 	private int pontuacao;
 	
-	Jogador(String nome, String senha) {
+	public Jogador(String nome, String senha) {
 		super(nome, senha);
 		setPontuacao(0);
 		setRecorde(0);

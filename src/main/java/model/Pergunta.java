@@ -15,7 +15,7 @@ public class Pergunta implements Serializable{
 	private List<String> alternativas;
 	
 	
-	Pergunta(String enunciado, String resposta, List<String> alternativas){
+	public Pergunta(String enunciado, String resposta, List<String> alternativas){
 		setEnunciado(enunciado);
 		setResposta(resposta);
 		setAlternativas(alternativas);
