@@ -2,11 +2,13 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Jogador extends Usuario implements Serializable, Comparable<Jogador> {
 
 	private static final long serialVersionUID = 1L;
 
-	private long id;
 	private int recorde;
 	private int pontuacao;
 	
@@ -36,14 +38,6 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	@Override

@@ -5,9 +5,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Tema implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	@Id
 	private String tema;
 	private List<Pergunta> perguntas;
 
