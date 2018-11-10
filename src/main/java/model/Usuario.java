@@ -12,12 +12,10 @@ import org.apache.log4j.Logger;
 
 @Entity
 public class Usuario implements Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-	private static final String ENCODING_TYPE = "UTF-8";
-	private static final String ENCRYPT_TYPE = "MD5";
 	private static Logger logger = Logger.getLogger(Usuario.class);
-
+	
 	@Id
 	protected String name;
 	private String password;
@@ -42,13 +40,13 @@ public class Usuario implements Serializable {
 	private String md5Crypt(String senha) {
 
 		try {
-			MessageDigest algorithm = MessageDigest.getInstance(ENCRYPT_TYPE);
+			MessageDigest algorithm = MessageDigest.getInstance(Constantes.ENCRYPT_TYPE);
 
-			byte messageDigest[] = algorithm.digest(senha.getBytes(ENCODING_TYPE));
+			byte messageDigest[] = algorithm.digest(senha.getBytes(Constantes.ENCODING_TYPE));
 			StringBuilder hexString = new StringBuilder();
 
 			for (byte b : messageDigest) {
-				hexString.append(String.format("%02X", 0xFF & b));
+				hexString.append(String.format(Constantes.STRING_FORMAT, 0xFF & b));
 			}
 
 			return hexString.toString().toLowerCase();
@@ -61,7 +59,7 @@ public class Usuario implements Serializable {
 
 	}
 
-	public boolean md5sum(String senha) {
+	public boolean logar(String senha) {
 		String novoHash = md5Crypt(senha);
 		if (this.password.equals(novoHash))
 			return true;

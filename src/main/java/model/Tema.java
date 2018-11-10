@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -14,7 +15,7 @@ public class Tema implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String tema;
-	private List<Pergunta> perguntas;
+	private List<Pergunta> perguntas = new ArrayList<>();
 
 	public Tema(String tema){
 		setTema(tema);

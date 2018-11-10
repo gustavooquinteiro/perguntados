@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -11,12 +12,11 @@ import javax.persistence.Id;
 @Entity
 public class Pergunta implements Serializable{
 
-
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String enunciado;
 	private String resposta;
-	private List<String> alternativas;
+	private List<String> alternativas = new ArrayList<>();
 	
 	
 	public Pergunta(String enunciado, String resposta, List<String> alternativas){

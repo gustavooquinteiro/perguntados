@@ -11,6 +11,7 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 
 	private int recorde;
 	private int pontuacao;
+	public String resposta;
 	
 	public Jogador(String nome, String senha) {
 		super(nome, senha);
@@ -39,8 +40,13 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
 	}
+	
+	public boolean responde(Pergunta pergunta) {
+		if (pergunta.compare(resposta))
+			return true;
+		return false;
+	}
 
-	@Override
 	public int compareTo(Jogador jogador) {
 		if (this.recorde < jogador.recorde)
 			return -1;
