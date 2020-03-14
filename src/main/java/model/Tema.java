@@ -9,13 +9,15 @@ import java.util.Random;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import model.Pergunta;
+
 @Entity
 public class Tema implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String tema;
-	private List<Pergunta> perguntas = new ArrayList<>();
+	private List<Pergunta> perguntas = new ArrayList<Pergunta>();
 
 	public Tema(String tema){
 		setTema(tema);
