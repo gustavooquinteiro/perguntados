@@ -9,14 +9,13 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 
 	private static final long serialVersionUID = 1L;
 
-	private int recorde;
+	private int recorde = 0;
 	private int pontuacao;
 	public String resposta;
 	
 	public Jogador(String nome, String senha) {
 		super(nome, senha);
 		setPontuacao(0);
-		setRecorde(0);
 	}
 
 	public int getRecorde() {
@@ -26,11 +25,11 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 	public void setRecorde(int recorde) {
 		if (recorde > this.recorde)
 			this.recorde = recorde;
-		pontuacao = 0;
+		this.pontuacao = 0;
 	}
 
 	public void increasePoints(int pontos) {
-		pontuacao += pontos;
+		this.pontuacao += pontos;
 	}
 
 	public int getPontuacao() {
@@ -42,7 +41,7 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 	}
 	
 	public boolean responde(Pergunta pergunta) {
-		if (pergunta.compare(resposta))
+		if (pergunta.compare(this.resposta))
 			return true;
 		return false;
 	}
