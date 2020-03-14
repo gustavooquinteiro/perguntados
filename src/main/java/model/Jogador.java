@@ -12,7 +12,7 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 	private int recorde = 0;
 	private int pontuacao;
 	public String resposta;
-	
+
 	public Jogador(String nome, String senha) {
 		super(nome, senha);
 		setPontuacao(0);
@@ -40,8 +40,18 @@ public class Jogador extends Usuario implements Serializable, Comparable<Jogador
 		this.pontuacao = pontuacao;
 	}
 	
-	public boolean responde(Pergunta pergunta) {
-		if (pergunta.compare(this.resposta))
+	public String getResposta() {
+		while (resposta == null || resposta.isEmpty());
+		return resposta;
+	}
+
+	public void setResposta(String resposta) {
+		this.resposta = resposta;
+	}
+	
+	public boolean responde(Pergunta pergunta, String resposta) {
+		this.setResposta(resposta);
+		if (pergunta.compare(this.getResposta()))
 			return true;
 		return false;
 	}
