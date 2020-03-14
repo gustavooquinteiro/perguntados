@@ -8,7 +8,6 @@ import javax.persistence.PersistenceException;
 import org.apache.log4j.Logger;
 
 import model.Tema;
-import model.Usuario;
 
 public class TemaController implements Serializable {
 
