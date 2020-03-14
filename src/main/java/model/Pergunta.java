@@ -16,7 +16,7 @@ public class Pergunta implements Serializable{
 	@Id
 	private String enunciado;
 	private String resposta;
-	private List<String> alternativas = new ArrayList<>();
+	private List<String> alternativas = new ArrayList<String>();
 	
 	
 	public Pergunta(String enunciado, String resposta, List<String> alternativas){
@@ -50,10 +50,11 @@ public class Pergunta implements Serializable{
 	
 	public void setAlternativas(List<String> alternativas) {
 		this.alternativas.addAll(alternativas);
+		this.alternativas.add(this.getResposta());
 	}
 	
 	public boolean compare (String alternativaSelecionada) {
-		if (alternativaSelecionada.equals(resposta))
+		if (alternativaSelecionada.equals(this.getResposta()))
 			return true;
 		return false;
 	}
