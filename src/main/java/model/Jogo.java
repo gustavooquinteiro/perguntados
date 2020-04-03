@@ -64,7 +64,7 @@ public class Jogo {
 	}
 	
 	public static void main(String[] args) {
-		TemaController a = new TemaController(new EntityManagerFactory());
+		TemaController a = new TemaController();
 		Tema tema = new Tema("curiosidades");
 		ArrayList<String> op1 = new ArrayList<String>();
 		op1.add("1600");
